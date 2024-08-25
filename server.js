@@ -6,9 +6,8 @@ require('dotenv').config();
 
 const app = express();
 
-
 const corsOptions = {
-  origin: 'https://hasan-chakra.netlify.app/',
+  origin: 'https://hasan-chakra.netlify.app', 
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 };
@@ -20,7 +19,7 @@ app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: 'Gmail', 
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
