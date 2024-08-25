@@ -5,7 +5,15 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+
+
+const corsOptions = {
+  origin: 'https://hasan-chakra.netlify.app/',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 app.post('/api/contact', async (req, res) => {
